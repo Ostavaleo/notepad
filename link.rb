@@ -24,6 +24,9 @@ class Link < Post
   # Этот метод будет возвращать массив из трех строк: адрес ссылки, описание
   # и дата создания
   def to_strings
+    time_string = "Создано: #{@created_at.strftime("%Y-%m-%d_%H-%M-%S.txt")} \n\r \n\r"
+
+    return [@url, @text, time_string]
   end
 end
 

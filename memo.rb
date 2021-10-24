@@ -22,5 +22,8 @@ class Memo < Post
 
   # Этот метод будет возвращать массив из строк заметки + строка-дата создания
   def to_strings
+    time_string = "Создано: #{@created_at.strftime("%Y-%m-%d_%H-%M-%S.txt")} \n\r \n\r"
+
+    return @text.unshift(time_string)
   end
 end

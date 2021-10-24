@@ -3,6 +3,15 @@
 # Базовый класс «Запись» — здесь мы определим основные методы и свойства,
 # общие для всех типов записей.
 class Post
+
+  def self.post_types
+    [Memo, Link, Task]
+  end
+
+  def self.create(type_index)
+    return post_types(type_index).new
+  end
+
   # В конструкторе класса определим две переменные экземпляра: дату создания
   # записи @created_at (текущий момент) и массив строк записи @text (пустой)
   def initialize
