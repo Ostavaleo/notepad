@@ -9,14 +9,14 @@ class Post
   end
 
   def self.create(type_index)
-    return post_types(type_index).new
+    post_types[type_index].new
   end
 
   # В конструкторе класса определим две переменные экземпляра: дату создания
   # записи @created_at (текущий момент) и массив строк записи @text (пустой)
   def initialize
     @created_at = Time.now
-    @text = []
+    @text = nil
   end
 
   # Метод read_from_console вызываться в программе когда нужно считать ввод
